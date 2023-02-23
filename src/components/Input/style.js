@@ -15,10 +15,10 @@ export const InputContainer = styled.div`
         height: auto;
         background-color: #ffffff;
         border: 0;
-        float: left;
-        clear: both;
-        font-size: 1.25rem;
-        padding: .5rem;
+        text-align: right;
+        font-size: 1.5rem;
+        padding: .15rem .5rem;
+        color: #000000;
         
     }
 `

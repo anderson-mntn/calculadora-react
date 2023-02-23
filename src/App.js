@@ -10,11 +10,11 @@ const App = () => {
 
   const [currentNumber, setCurrentNumber] = useState('0');
   const [firstNumber, setFirstNumber] = useState('0');
-  const [operation, setOperation] = useState('0')
+  const [operation, setOperation] = useState('0');
 
   const handleAddNumber = (number) => {
     console.log(number, currentNumber);
-    setCurrentNumber(prev => `${prev == '0' ? '' : prev}${number}`)
+    setCurrentNumber(prev => `${prev == 'a' ? '' : prev}${number}`);
   
   }
 
@@ -22,7 +22,6 @@ const App = () => {
   const handleOnClear = () => {
     setCurrentNumber('0');
   }
-
 
   // ---- Sum ----
   const handleSum = () => {
@@ -34,8 +33,7 @@ const App = () => {
       const sum = Number(firstNumber) + Number(currentNumber);
       setCurrentNumber(String(sum));
       setOperation('+');
-      setFirstNumber('0');
-      
+      setFirstNumber('0'); 
     }
   }
 
@@ -67,6 +65,7 @@ const App = () => {
       setFirstNumber('0');
     }
   }
+
   // ---- Multiplication ----
   const handleMultiplication = () => {
     if(firstNumber === '0'){
@@ -83,7 +82,6 @@ const App = () => {
   
   // ---- Result/Equals ----
   const handleEquals = () => {
-  
     if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
       switch(operation){
         case '+': handleSum();
@@ -103,10 +101,8 @@ const App = () => {
   }
 
   const handleBackspace = () =>{
-    
     setCurrentNumber(currentNumber.slice(0, -1));
     console.log(currentNumber);
-
   }
 
    // Prints current numbers and operations in console.
