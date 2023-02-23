@@ -1,7 +1,6 @@
-import { Container, Content, Row, Column } from "./styles";
+import { Container, Content, Row } from "./styles";
 import Input from "./components/Input";
 import Button from "./components/Button";
-import { ButtonContainer } from "./components/Button/style";
 import { useState } from "react";
 
 
@@ -11,27 +10,71 @@ const App = () => {
 
   const [currentNumber, setCurrentNumber] = useState('0');
   const [firstNumber, setFirstNumber] = useState('0');
+  const [operation, setOperation] = useState('0')
 
   const handleAddNumber = (number) => {
     console.log(number, currentNumber);
     setCurrentNumber(prev => `${prev == '0' ? '' : prev}${number}`)
   
   }
+
+  // ---- Clear ----
   const handleOnClear = () => {
     setCurrentNumber('0');
-    setFirstNumber('0');
   }
+
+
+  // ---- Sum ----
   const handleSum = () => {
-    if(firstNumber == '0'){
+
+    if(firstNumber === '0'){
       setFirstNumber(String(currentNumber));
-      setCurrentNumber('0');
+      setCurrentNumber(0);
+      setOperation('+');
     } else {
       const sum = Number(firstNumber) + Number(currentNumber);
       setCurrentNumber(String(sum));
+      setOperation('+');
+      setFirstNumber('0');
+      
+    }
+  }
+
+  // ---- Sub ----
+  const handleSub = () => {
+
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber(0);
+      setOperation('-');
+    } else {
+      const sum = Number(firstNumber) - Number(currentNumber);
+      setCurrentNumber(String(sum));
+      setOperation('-');
+      setFirstNumber('0');
       
     }
   }
   
+  // ---- Result/Equals ----
+  const handleEquals = () => {
+  
+    if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
+      switch(operation){
+        case '+': handleSum();
+        break;
+        case '-': handleSub();
+        break;
+        default:
+        break;
+      }
+    }
+  }
+
+   // Prints current numbers and operations in console.
+   const handleToConsole = () =>{
+    console.log("current number: " + currentNumber + ", first number: " + firstNumber + ", operation: " + operation);
+   }
 
   return (
     <Container>
@@ -51,7 +94,7 @@ const App = () => {
           <Button label="4" onClick={() => handleAddNumber('4')}/>
           <Button label="5" onClick={() => handleAddNumber('5')}/>
           <Button label="6" onClick={() => handleAddNumber('6')}/>
-          <Button label="-"/>
+          <Button label="-" onClick={handleSub}/>
         
           <Button label="1" onClick={() => handleAddNumber('1')} />
           <Button label="2" onClick={() => handleAddNumber('2')} />
@@ -60,8 +103,8 @@ const App = () => {
       
           <Button label="." onClick={() => handleAddNumber('.')}/>
           <Button label="0" onClick={() => handleAddNumber('0')}/>
-          <Button label="="/>
-          <Button label="Dio" />
+          <Button label="=" onClick={handleEquals}/>
+          <Button label="Dio" onClick={handleToConsole} />
         </Row>
       </Content>   
     </Container>
