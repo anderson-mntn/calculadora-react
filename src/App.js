@@ -26,7 +26,6 @@ const App = () => {
 
   // ---- Sum ----
   const handleSum = () => {
-
     if(firstNumber === '0'){
       setFirstNumber(String(currentNumber));
       setCurrentNumber(0);
@@ -42,7 +41,6 @@ const App = () => {
 
   // ---- Sub ----
   const handleSubstraction = () => {
-
     if(firstNumber === '0'){
       setFirstNumber(String(currentNumber));
       setCurrentNumber(0);
@@ -58,7 +56,6 @@ const App = () => {
 
     // ---- Division ----
   const handleDivision = () => {
-
     if(firstNumber === '0'){
       setFirstNumber(String(currentNumber));
       setCurrentNumber(0);
@@ -68,12 +65,10 @@ const App = () => {
       setCurrentNumber(String(sum));
       setOperation('/');
       setFirstNumber('0');
-      
     }
   }
   // ---- Multiplication ----
   const handleMultiplication = () => {
-
     if(firstNumber === '0'){
       setFirstNumber(String(currentNumber));
       setCurrentNumber(0);
@@ -99,10 +94,19 @@ const App = () => {
         break;
         case 'X': handleMultiplication();
         break;
+        case 'C': handleBackspace();
+        break;
         default:
         break;
       }
     }
+  }
+
+  const handleBackspace = () =>{
+    
+    setCurrentNumber(currentNumber.slice(0, -1));
+    console.log(currentNumber);
+
   }
 
    // Prints current numbers and operations in console.
@@ -117,7 +121,7 @@ const App = () => {
         <Row>
           <Button label="%"/>
           <Button label="CE" onClick={handleOnClear}/>
-          <Button label="C" />
+          <Button label="C" onClick={handleBackspace}/>
           <Button label="/" onClick={handleDivision}/>
         
           <Button label="7" onClick={() => handleAddNumber('7')}/>
