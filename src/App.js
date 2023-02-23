@@ -2,9 +2,17 @@ import { Container, Content, Row, Column } from "./styles";
 import Input from "./components/Input";
 import Button from "./components/Button";
 import { ButtonContainer } from "./components/Button/style";
+import { useState } from "react";
 
 
 const App = () => {
+
+  // Implementando funções da calculadora
+  const [currentNumber, setCurrentNumber] = useState(0);
+  const handleAddNumber = () =>{
+    
+  }
+
   return (
     <Container>
      <Content>
@@ -13,7 +21,7 @@ const App = () => {
           <Button label="%"/>
           <Button label="CE"/>
           <Button label="C"/>
-          <Button label="<"/>
+          <Button label="/"/>
         </Row>
         <Row>
           <Button label="7"/>
@@ -34,9 +42,8 @@ const App = () => {
           <Button label="+"/>
         </Row>
         <Row>
-          <Button label="+/-"/>
-          <Button label="0"/>
           <Button label="."/>
+          <Button label="0"/>
           <Button label="="/>
         </Row>
       </Content>   
