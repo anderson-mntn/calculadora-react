@@ -1,6 +1,11 @@
+# Calculator - My First React Project <br>
+<img src="https://imgur.com/wdFUvT1">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 
 ## Available Scripts
 
