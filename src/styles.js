@@ -11,15 +11,16 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
     background-color: #a09090;
-    width: fit-content;
+    width: auto;
     min-height: 350px;
     margin: 1rem;
-    
+        
 `
 export const Row = styled.div`
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: .25rem 1rem;
+    gap: .75rem 0;
+    margin: .75rem .5rem;  
 `
 export const Column = styled.div`
     display:flex;

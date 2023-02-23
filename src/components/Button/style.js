@@ -13,7 +13,7 @@ export const ButtonContainer = styled.button`
     font-weight: 700;
     color: #ffffff;
     background-color: #000000; 
-    margin: .25rem auto;
+    margin: auto;
     font-family: 'Arial';
     font-size: 1.25rem;
     

@@ -8,16 +8,17 @@ export const InputContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding: .75rem;
+    
 
     input{
-        width: auto;
+        width: 280px;
         height: auto;
         background-color: #ffffff;
         border: 0;
         float: left;
         clear: both;
-        font-size: 24px;
-        padding: 1rem;
+        font-size: 1.25rem;
+        padding: .5rem;
         
     }
 `
