@@ -41,7 +41,7 @@ const App = () => {
   }
 
   // ---- Sub ----
-  const handleSub = () => {
+  const handleSubstraction = () => {
 
     if(firstNumber === '0'){
       setFirstNumber(String(currentNumber));
@@ -55,6 +55,36 @@ const App = () => {
       
     }
   }
+
+    // ---- Division ----
+  const handleDivision = () => {
+
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber(0);
+      setOperation('/');
+    } else {
+      const sum = Number(firstNumber) / Number(currentNumber);
+      setCurrentNumber(String(sum));
+      setOperation('/');
+      setFirstNumber('0');
+      
+    }
+  }
+  // ---- Multiplication ----
+  const handleMultiplication = () => {
+
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber(0);
+      setOperation('x');
+    } else {
+      const sum = Number(firstNumber) * Number(currentNumber);
+      setCurrentNumber(String(sum));
+      setOperation('x');
+      setFirstNumber('0');
+    }
+  }
   
   // ---- Result/Equals ----
   const handleEquals = () => {
@@ -63,7 +93,11 @@ const App = () => {
       switch(operation){
         case '+': handleSum();
         break;
-        case '-': handleSub();
+        case '-': handleSubstraction();
+        break;
+        case '/': handleDivision();
+        break;
+        case 'X': handleMultiplication();
         break;
         default:
         break;
@@ -84,17 +118,17 @@ const App = () => {
           <Button label="%"/>
           <Button label="CE" onClick={handleOnClear}/>
           <Button label="C" />
-          <Button label="/"/>
+          <Button label="/" onClick={handleDivision}/>
         
           <Button label="7" onClick={() => handleAddNumber('7')}/>
           <Button label="8" onClick={() => handleAddNumber('8')}/>
           <Button label="9" onClick={() => handleAddNumber('9')}/>
-          <Button label="x"/>
+          <Button label="X" onClick={handleMultiplication}/>
        
           <Button label="4" onClick={() => handleAddNumber('4')}/>
           <Button label="5" onClick={() => handleAddNumber('5')}/>
           <Button label="6" onClick={() => handleAddNumber('6')}/>
-          <Button label="-" onClick={handleSub}/>
+          <Button label="-" onClick={handleSubstraction}/>
         
           <Button label="1" onClick={() => handleAddNumber('1')} />
           <Button label="2" onClick={() => handleAddNumber('2')} />

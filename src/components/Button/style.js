@@ -7,15 +7,13 @@ export const ButtonContainer = styled.button`
     border: none;
     border-radius: .25rem;
     color: #000000;
-    font-weight: 700;
-    font-size: 1.25rem;
+    font-weight: 300;
     font-family: 'Roboto';
-    font-weight: 700;
     color: #ffffff;
     background-color: #000000; 
     margin: auto;
     font-family: 'Arial';
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     
 
     &:hover{
