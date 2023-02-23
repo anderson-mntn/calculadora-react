@@ -1,6 +1,6 @@
 import { InputContainer } from "./style";
 
-const Input = () =>{
+const Input = ({value}) =>{
     return(
         <InputContainer>
             {/* Hi, input -&gt; &nbsp;  */}

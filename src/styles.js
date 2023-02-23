@@ -17,10 +17,9 @@ export const Content = styled.div`
     
 `
 export const Row = styled.div`
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: .25rem 1rem;
 `
 export const Column = styled.div`
     display:flex;
