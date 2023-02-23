@@ -7,13 +7,14 @@ export const Container = styled.div`
     display:flex;
     align-items: center;
     justify-content: start;
+    flex-direction: column;
     
 `
 export const Content = styled.div`
     background-color: #a09090;
     width: auto;
     min-height: 350px;
-    margin: 1rem;
+    margin: 0;
         
 `
 export const Row = styled.div`
@@ -27,4 +28,17 @@ export const Column = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+`
+export const Title = styled.div`
+    margin: 2.5rem auto;
+    font-size: 2.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+`
+export const Footer = styled.div`
+    position: fixed;
+    bottom: 1rem;
+    margin: auto;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
 `

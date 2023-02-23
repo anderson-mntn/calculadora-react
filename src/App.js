@@ -1,4 +1,4 @@
-import { Container, Content, Row } from "./styles";
+import { Container, Content, Row, Title, Footer } from "./styles";
 import Input from "./components/Input";
 import Button from "./components/Button";
 import { useState } from "react";
@@ -14,7 +14,7 @@ const App = () => {
 
   const handleAddNumber = (number) => {
     console.log(number, currentNumber);
-    setCurrentNumber(prev => `${prev == 'a' ? '' : prev}${number}`);
+    setCurrentNumber(prev => `${prev === '0' ? '' : prev}${number}`);
   
   }
 
@@ -105,13 +105,14 @@ const App = () => {
     console.log(currentNumber);
   }
 
-   // Prints current numbers and operations in console.
-   const handleToConsole = () =>{
+  // Prints current numbers and operations in console.
+  const handleToConsole = () =>{
     console.log("current number: " + currentNumber + ", first number: " + firstNumber + ", operation: " + operation);
-   }
+  }
 
   return (
     <Container>
+      <Title>Calculadora</Title>
      <Content>
         <Input value={currentNumber} />
         <Row>
@@ -138,9 +139,9 @@ const App = () => {
           <Button label="." onClick={() => handleAddNumber('.')}/>
           <Button label="0" onClick={() => handleAddNumber('0')}/>
           <Button label="=" onClick={handleEquals}/>
-          <Button label="Dio" onClick={handleToConsole} />
         </Row>
-      </Content>   
+      </Content> 
+      <Footer><a href="https://web.dio.me/home" target="_blank">Dio.me</a></Footer> 
     </Container>
   );
 }
