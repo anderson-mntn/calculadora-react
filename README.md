@@ -1,5 +1,5 @@
 # Calculator - My First React Project <br>
-<img src="https://imgur.com/wdFUvT1">
+<img src="https://i.imgur.com/wdFUvT1.png">
 
 # Getting Started with Create React App
 
